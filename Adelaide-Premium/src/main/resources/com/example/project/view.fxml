@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.project.Controller">
+    <content>
+        <VBox fx:id="main_page_vbox" prefHeight="123.0" prefWidth="1101.0">
+            <children>
+                <VBox fx:id="main_page_header" prefHeight="0.0" prefWidth="1284.0"/>
+                <VBox fx:id="products_vbox" alignment="CENTER" prefHeight="70.0" prefWidth="1231.0">
+                    <MenuBar fx:id="menubar" prefHeight="22.0" prefWidth="1296.0">
+                        <menus>
+                            <Menu mnemonicParsing="false" text="Reports">
+                                <items>
+                                    <MenuItem fx:id="report_stocktake" mnemonicParsing="false"
+                                              onAction="#onStocktakeClick" text="Stocktake"/>
+                                    <MenuItem fx:id="report_quarterly_sales" mnemonicParsing="false"
+                                              onAction="#onQuarterlySalesClicked" text="Quarterly Sales"/>
+                                    <MenuItem fx:id="report_customer_demographics" mnemonicParsing="false"
+                                              onAction="#onCustomerDemographicsClick" text="Customer Demographics"/>
+                                    <MenuItem fx:id="report_monthly" mnemonicParsing="false" onAction="#onMonthClick"
+                                              text="Monthly"/>
+                                </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Catalog">
+                                <items>
+                                    <MenuItem fx:id="random_catalog" mnemonicParsing="false"
+                                              onAction="#onGenerateCatalogClick" text="Generate Catalog"/>
+                                </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Customer Registration">
+                                <items>
+                                    <MenuItem fx:id="register_customer_menu" mnemonicParsing="false"
+                                              onAction="#onRegisterCustomerClick" text="Register Customer"/>
+                                </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Add Products">
+                                <items>
+                                    <MenuItem fx:id="register_product_menu" mnemonicParsing="false"
+                                              onAction="#onRegisterProductClick" text="Register New Product"/>
+                                </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Update Quantity">
+                                <items>
+                                    <MenuItem fx:id="update_quantity_menu" mnemonicParsing="false"
+                                              onAction="#onUpdateQuantityClick" text="Update Product Quantity"/>
+                                </items>
+                            </Menu>
+                        </menus>
+                    </MenuBar>
+                    <HBox prefHeight="102.0" prefWidth="1082.0" spacing="10.0">
+                        <VBox.margin>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                        </VBox.margin>
+                        <children>
+                            <Label fx:id="customer_id_label" text="Customer ID: "/>
+                            <TextField fx:id="customer_id_value" promptText="Enter Customer ID"/>
+                            <Button fx:id="verify_customer" mnemonicParsing="false" onAction="#onVerifyCustomerClick"
+                                    text="Verify Customer"/>
+                            <Label fx:id="customer_verification_label" prefHeight="21.0" prefWidth="445.0">
+                                <padding>
+                                    <Insets left="8.0" top="4.0"/>
+                                </padding>
+                            </Label>
+                            <Button fx:id="place_order" alignment="CENTER" mnemonicParsing="false"
+                                    onAction="#onPlaceOrderClick" text="Place Order" translateX="230.0"/>
+                        </children>
+                        <padding>
+                            <Insets left="50.0" top="30.0"/>
+                        </padding>
+                    </HBox>
+                </VBox>
+                <VBox fx:id="main_page_footer" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="1389.0"/>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>
